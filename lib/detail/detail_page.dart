@@ -14,7 +14,12 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (isInTabletLayout)
-        ? Scaffold(body: _BodyWidget(detail: item.detail))
+        ? Scaffold(
+            body: _BodyWidget(
+              detail: item.detail,
+              title: item.title,
+            ),
+          )
         : Scaffold(
             appBar: AppBarWidget(title: item.title),
             body: _BodyWidget(detail: item.detail),
@@ -23,17 +28,33 @@ class DetailPage extends StatelessWidget {
 }
 
 class _BodyWidget extends StatelessWidget {
-  const _BodyWidget({Key? key, this.detail = ''}) : super(key: key);
+  const _BodyWidget({Key? key, this.detail = '', this.title = ''})
+      : super(key: key);
   final String detail;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
-      child: Text(
-        detail,
-        textAlign: TextAlign.justify,
-        textScaleFactor: 1.4,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          if (title.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: Text(
+                title,
+                style: Theme.of(context).textTheme.headline6,
+              ),
+            ),
+          Text(
+            detail,
+            textAlign: TextAlign.justify,
+            textScaleFactor: 1.4,
+          ),
+        ],
       ),
     );
   }
