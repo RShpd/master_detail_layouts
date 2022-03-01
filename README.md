@@ -10,5 +10,10 @@ The source code files are feature-based categorized. <br>
 I'm using mock data, but it can be replaced when it was required to fetch data by request.
 
 ## Result
-Here’s what the result looks like on a mobile device:
-![Mobile_Preview](/mobile.gif)
+Here’s what the result looks like on a mobile device: <br>
+![Mobile_Preview](/mobile.gif) <br> <br>
+
+The result on the web is looked like as the following:<br>
+![Web_Preview](/web.mp4) <br> <br>
+
+
