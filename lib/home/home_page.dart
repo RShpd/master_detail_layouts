@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
           return const _MobileHomePage();
         }
 
-        /// other screen sizes like tablet and web
+        /// other screen sizes like tablet and web browsers
         return _TabletHomePage(
           selectedItem: _selectedItem,
           onItemTap: (item) => setState(() => _selectedItem = item),
@@ -47,7 +47,12 @@ class _TabletHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        Expanded(child: MasterPage(onItemTap: onItemTap)),
+        Expanded(
+          child: MasterPage(
+            onItemTap: onItemTap,
+            selectedItem: selectedItem,
+          ),
+        ),
         Expanded(
           flex: 2,
           child: DetailPage(

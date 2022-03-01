@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:master_detail_layouts/models/models.dart';
 
 class ItemListWidget extends StatelessWidget {
-  const ItemListWidget({Key? key, required this.items, this.onItemTap})
+  const ItemListWidget(
+      {Key? key, required this.items, this.onItemTap, this.selectedItem})
       : super(key: key);
 
   final List<Item> items;
   final Function(Item)? onItemTap;
+  final Item? selectedItem;
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +21,7 @@ class ItemListWidget extends StatelessWidget {
             item.title,
             style: Theme.of(context).textTheme.headline6,
           ),
+          selected: item == selectedItem,
           onTap: () => onItemTap?.call(item),
           trailing: const Icon(Icons.arrow_forward_ios),
         );

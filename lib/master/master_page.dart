@@ -7,9 +7,10 @@ import 'package:master_detail_layouts/mock_data/mock_data.dart';
 import 'package:master_detail_layouts/models/models.dart';
 
 class MasterPage extends StatelessWidget {
-  const MasterPage({Key? key, this.onItemTap}) : super(key: key);
+  const MasterPage({Key? key, this.onItemTap, this.selectedItem}) : super(key: key);
 
   final Function(Item)? onItemTap;
+  final Item? selectedItem;
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +18,7 @@ class MasterPage extends StatelessWidget {
       appBar: const AppBarWidget(title: 'Master Detail Layout'),
       body: ItemListWidget(
         items: kItemList,
+        selectedItem: selectedItem,
         onItemTap: onItemTap ?? (item) => _onItemTap(context, item),
       ),
     );
