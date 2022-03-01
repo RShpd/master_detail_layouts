@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:master_detail_layouts/common/widgets/app_bar_widget.dart';
 import 'package:master_detail_layouts/detail/detail_page.dart';
 import 'package:master_detail_layouts/master/widgets/master_widgets.dart';
 import 'package:master_detail_layouts/mock_data/item_list.dart';
@@ -13,6 +14,7 @@ class MasterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const AppBarWidget(title: 'Master Detail Layout'),
       body: ItemListWidget(
         items: kItemList,
         onItemTap: onItemTap ?? (item) => _onItemTap(context, item),
@@ -21,7 +23,7 @@ class MasterPage extends StatelessWidget {
   }
 
   void _onItemTap(BuildContext context, Item item) {
-    /// This method will be called when the screen size is classifies as a smartphone
+    /// This method will be call when the screen size is classifies as a smartphone
     final route = MaterialPageRoute(
       builder: (context) => DetailPage(
         item: item,
