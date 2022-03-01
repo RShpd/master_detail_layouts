@@ -16,6 +16,8 @@ class ItemListWidget extends StatelessWidget {
       itemCount: items.length,
       itemBuilder: (context, index) {
         final item = items[index];
+
+        /// Item list tile widget
         return ListTile(
           title: Text(
             item.title,
