@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:master_detail_layouts/master/master_page.dart';
+import 'package:master_detail_layouts/home/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Master Detail Layouts',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MasterPage(),
+      home: const HomePage(),
     );
   }
 }
