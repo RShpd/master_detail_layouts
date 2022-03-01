@@ -2,15 +2,13 @@
 
 Master detail layouts project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+This is a Simple Responsive Master-Detail View in Flutter.
+The app contains a list of items, each of them can be clicked to show more detail.
 
-A few resources to get you started if this is your first Flutter project:
+The source code files are feature-based categorized. <br>
+I'm using mock data, but it can be replaced when it was required to fetch data by request.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Result
+Here’s what the result looks like on a mobile device:
+![Mobile_Preview](/mobile.gif)
